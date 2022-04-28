@@ -11,7 +11,8 @@ var rollbar = new Rollbar({
 // record a generic message and send it to Rollbar
 rollbar.log('Hello world!')
 
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, '../frontend')))
+
 const port  = process.env.PORT || 4005
 app.listen(port, function(){
 console.log(`Listening on da port that is ${port}`)
